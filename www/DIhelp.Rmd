@@ -1,0 +1,41 @@
+---
+title: "Approximating Definite Integrals Documentation"
+output: html_document
+---
+
+Approximating Definite Integrals is a mostly self-explanatory application that illustrates the basic calculus concept that you can calculate the area under the curve as the limit of the sum of the areas of a increasing number of rectangles.
+
+####Inputs:
+
+**Input a formula for y in terms of x.**
+A formula to be integrated, written in terms of x. Some examples:
+
+* x^2 / exp(x)
+* 1 + x + x^2 / 2 + x^3 / 6
+* ifelse(x>3, 3, x)
+
+*WARNING: This formula can be any expression that R can evaluate, for the purposes of this assignment. This can be a potential security concern. Do not allow unauthorized users to execute this application.*
+
+**Lower Limit**
+The lower bound of the definite integral. Geometrically, this is the leftmost x_value of the graph, assuming that lower limit < upper limit. The default value is 0.
+
+**Upper Limit**
+The upper bound of the definite integral. Geometrically, this is the rightmost x_value of the graph, assuming that lower limit < upper limit. The default value is 10. 
+
+Note that it is possible to use upper limit < lower limit, and that this will correctly evaluate to the additive inverse of the result of flipping the two limits. However, this is not the intended use case for the application.
+
+**Approximating Rectangles**
+This slider, ranging from 1 to 100 with a default value of 10, controls the number of rectangles in the plot.
+
+
+#### Output
+
+**Formula**
+The input formula is displayed as an equation, e.g., y=x+1.
+
+**Graph**
+This graph is overlays a plot of the input formula and a number of rectangles approximating the area under the curve. The width of each rectangle is given by (upperLimit-lowerLimit)/nRectangles, and the associated height is given by the function value of the lower endpoint.
+
+**Sum of the Area of the Rectangles**
+**Value of the Definite Integral**
+These values are self-explanatory, but it should be noted that the former value should approximate the latter, with the approximation getting better as the number of rectangles in the plot increases.
